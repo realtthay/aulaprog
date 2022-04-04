@@ -18,6 +18,11 @@ class Mobilia:
             s += f', localizada em: {str(self.quarto)}'
         return s
 
+class Televisao(Mobilia):
+  def __init__(self, marca="", funcao="", material=""):
+    super().__init__(self, material, funcao)
+
+
 class Casa:
     def __init__(self, formato="", quartos=None):
         self.formato=formato
@@ -38,6 +43,8 @@ if __name__ == "__main__": # teste das classes
     m1 = Mobilia(nome = "Armário", funcao = "Guardar coisas", 
         material = "Madeira", quarto=q1) # quarto é opcional
     print(m1)
+
+    t1 = Televisao(marca="Samsung", funcao="Tv de mesa", material="Plastico")
 
     q2 = Quarto(nome="Banheiro", dimensoes="3x4 metros")
     c1 = Casa(formato="Germânica", quartos=[q1,q2])
